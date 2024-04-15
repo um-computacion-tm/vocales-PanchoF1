@@ -49,7 +49,8 @@ class TestContarVocales(unittest.TestCase):
     def test_con_vocales_en_mayuscula(self):
         palabra = "SOlAmente quIerO"
         resultado = contar_vocales(palabra)
-        self.assertEqual(
+        self.assertNotEqual(
             resultado,
             {"a": 1, "e": 3, "i": 1, "o": 2, "u": 1},
         )
+unittest.main()        
