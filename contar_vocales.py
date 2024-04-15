@@ -4,7 +4,8 @@ import unittest
 def contar_vocales(palabra):
     vocales = ("a", "e", "i", "o", "u")
     resultado = {}
-    for letra in palabra:
+    palabra = palabra.lower() #le agrego lower para que tome minusculas y pueda pasar test del uso de palabras con mayusculas
+    for letra in palabra: 
         if letra in vocales:
             # La letra es vocal
             if letra in resultado.keys():
@@ -49,8 +50,10 @@ class TestContarVocales(unittest.TestCase):
     def test_con_vocales_en_mayuscula(self):
         palabra = "SOlAmente quIerO"
         resultado = contar_vocales(palabra)
-        self.assertNotEqual(
+        self.assertEqual(
             resultado,
             {"a": 1, "e": 3, "i": 1, "o": 2, "u": 1},
-        )
+        )               
+
+
 unittest.main()        
